@@ -3,6 +3,7 @@ import { GeometricDecor } from "@/components/decor/GeometricDecor";
 import { Navbar } from "@/components/navbar/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { FeatureHighlights } from "@/components/features/FeatureHighlights";
+import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
 
       {/* Feature Highlights Bento Spotlight (Member Management & Events) */}
       <FeatureHighlights />
+
+      {/* Modern Professional Footer with Brand Marks */}
+      <Footer />
     </main>
   );
 }
