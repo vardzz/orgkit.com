@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "OrgKit — The Operating System for Student Organizations",
   description:
-    "Organize. Collaborate. Lead. OrgKit replaces messy spreadsheets, lost GCash dues receipts, and paper attendance with an all-in-one modern campus workspace.",
+    "A better way to run your student org. Members, events, dues, and everything your team needs. All in one place.",
   keywords: [
     "student organization",
     "campus leadership",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OrgKit — The Operating System for Student Organizations",
     description:
-      "Modern workspace engineered for university student organizations, collegiate societies, and youth non-profits. 3-minute setup, 100% mobile ready.",
+      "A better way to run your student org. Members, events, dues, and everything your team needs. All in one place.",
     type: "website",
     url: "https://orgkit.com",
   },
@@ -38,6 +38,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans antialiased bg-base text-ink selection:bg-accent/15 selection:text-accent-strong">
         {children}
       </body>
