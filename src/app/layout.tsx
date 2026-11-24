@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     "A better way to run your student org. Members, events, dues, and everything your team needs. All in one place.",
   icons: {
     icon: [
-      { url: "/orgkit-favicon.png", sizes: "any", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/orgkit-logo.png", sizes: "any", type: "image/png" },
+      { url: "/orgkit-logo.png", sizes: "any" },
     ],
     shortcut: "/orgkit-favicon.png",
     apple: "/orgkit-favicon.png",
