@@ -296,13 +296,7 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.7 }}
           className="relative z-10"
         >
-          {/* Eyebrow */}
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-200/70 bg-emerald-50/80 px-4 py-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-600" />
-            <span className="text-[11px] font-medium tracking-wide text-emerald-900 sm:text-xs">
-              THE WORKSPACE FOR STUDENT ORGANIZATIONS
-            </span>
-          </div>
+
 
           {/* Heading */}
           <h1 className="mx-auto max-w-[850px] text-[clamp(42px,7vw,76px)] font-semibold leading-[1.06] tracking-[-0.055em] text-zinc-950">
