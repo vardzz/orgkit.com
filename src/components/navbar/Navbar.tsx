@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,10 +17,16 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const leftNavLinks = [
     { label: "Features", href: "#features" },
     { label: "How it works", href: "#interactive-demos" },
+    { label: "Anti-Fraud QR", href: "#attendance" },
+    { label: "Handover Vault", href: "#handover" },
+  ];
+
+  const rightNavLinks = [
     { label: "Privacy", href: "#security" },
+    { label: "Sign in", href: "#cta" },
   ];
 
   return (
@@ -28,29 +34,26 @@ export const Navbar: React.FC = () => {
       className={`sticky top-0 z-50 transition-all duration-200 ${
         isScrolled
           ? "bg-white/90 backdrop-blur-md border-b border-zinc-200/60 shadow-xs"
-          : "bg-white/60 backdrop-blur-sm border-b border-zinc-200/30"
+          : "bg-white/70 backdrop-blur-sm border-b border-zinc-200/30"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo on Left: orgkit-text-logo.png */}
-          <Link
-            href="/"
-            className="flex items-center focus-visible:outline-accent"
-          >
-            <Image
-              src="/orgkit-text-logo.png"
-              alt="OrgKit Logo"
-              width={120}
-              height={40}
-              priority
-              className="h-7 sm:h-8 w-auto object-contain"
-            />
-          </Link>
+        <div className="relative flex items-center justify-between h-16 sm:h-20">
+          {/* Mobile Left: Hamburger Toggle */}
+          <div className="flex md:hidden items-center">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-xl text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
 
-          {/* Centered Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
-            {navLinks.map((link) => (
+          {/* Desktop Left: Navigation Links */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {leftNavLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
@@ -61,14 +64,35 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Right Action CTAs */}
-          <div className="hidden sm:flex items-center gap-6">
-            <a
-              href="#cta"
-              className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
+          {/* Center Logo: Symmetrical Notion-Style Centered Brand Mark */}
+          <div className="flex md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 items-center justify-center">
+            <Link
+              href="/"
+              className="flex items-center focus-visible:outline-accent"
             >
-              Sign in
-            </a>
+              <Image
+                src="/orgkit-text-logo.png"
+                alt="OrgKit Logo"
+                width={120}
+                height={40}
+                priority
+                className="h-7 sm:h-8 w-auto object-contain"
+              />
+            </Link>
+          </div>
+
+          {/* Desktop Right: Secondary Links & CTA */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-7">
+            {rightNavLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+
             <a href="#cta">
               <button className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-accent hover:bg-accent-strong text-white text-sm font-medium transition-all shadow-button hover:shadow-button-hover active:scale-[0.99] select-none btn-lift">
                 <span>Get started</span>
@@ -77,30 +101,22 @@ export const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="flex sm:hidden items-center gap-2">
+          {/* Mobile Right: Quick Action Button */}
+          <div className="flex md:hidden items-center">
             <a href="#cta">
-              <button className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-accent text-white text-xs font-medium">
+              <button className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-accent text-white text-xs font-medium shadow-button">
                 Get started →
               </button>
             </a>
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px] min-w-[44px] flex items-center justify-center"
-              aria-label="Toggle Navigation Menu"
-            >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-white border-b border-zinc-200 px-5 pt-3 pb-6 shadow-floating animate-card-fade-in">
+        <div className="md:hidden bg-white border-b border-zinc-200 px-5 pt-3 pb-6 shadow-floating animate-card-fade-in">
           <div className="flex flex-col gap-1">
-            {navLinks.map((link) => (
+            {[...leftNavLinks, ...rightNavLinks].map((link) => (
               <a
                 key={link.label}
                 href={link.href}
