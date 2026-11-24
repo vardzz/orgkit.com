@@ -41,7 +41,7 @@ const config: Config = {
         danger: "#DC2626",
       },
       fontFamily: {
-        sans: ["var(--font-plus-jakarta)", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        sans: ["'Plus Jakarta Sans'", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
       },
       boxShadow: {
         floating: "0 20px 50px rgba(24, 24, 27, 0.08)",
