@@ -5,13 +5,16 @@ import { Footer } from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://orgkit.com"),
-  title: "OrgKit — The Operating System for Student Organizations",
+  title: "OrgKit",
   description:
     "A better way to run your student org. Members, events, dues, and everything your team needs. All in one place.",
   icons: {
-    icon: "/orgkit-logo.png",
-    shortcut: "/orgkit-logo.png",
-    apple: "/orgkit-logo.png",
+    icon: [
+      { url: "/orgkit-favicon.png", sizes: "any", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/orgkit-favicon.png",
+    apple: "/orgkit-favicon.png",
   },
   keywords: [
     "student organization",
@@ -48,8 +51,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/orgkit-logo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/orgkit-logo.png" />
+        <link rel="icon" href="/orgkit-favicon.png" type="image/png" sizes="any" />
+        <link rel="apple-touch-icon" href="/orgkit-favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
