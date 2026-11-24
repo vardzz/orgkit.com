@@ -11,38 +11,85 @@ import {
   FolderOpen,
   ClipboardCheck,
   ArrowRight,
+  QrCode,
+  Receipt,
+  GraduationCap,
+  Sparkles,
 } from "lucide-react";
 
 const floatingIcons = [
+  // Left side flank
+  {
+    Icon: QrCode,
+    className: "left-[4%] top-[12%]",
+    delay: 0.2,
+    rotate: -14,
+    size: "w-[52px] h-[52px]",
+  },
   {
     Icon: Users,
-    className: "left-[7%] top-[22%]",
+    className: "left-[8%] top-[26%]",
     delay: 0,
-    rotate: -12,
+    rotate: -8,
+    size: "w-[58px] h-[58px]",
   },
   {
     Icon: CalendarDays,
-    className: "left-[16%] top-[48%]",
+    className: "left-[16%] top-[44%]",
     delay: 0.5,
     rotate: 9,
+    size: "w-[56px] h-[56px]",
+  },
+  {
+    Icon: Receipt,
+    className: "left-[5%] top-[60%]",
+    delay: 0.7,
+    rotate: -10,
+    size: "w-[50px] h-[50px]",
+  },
+  {
+    Icon: GraduationCap,
+    className: "left-[13%] top-[74%]",
+    delay: 1.1,
+    rotate: 11,
+    size: "w-[54px] h-[54px]",
+  },
+
+  // Right side flank
+  {
+    Icon: Sparkles,
+    className: "right-[6%] top-[12%]",
+    delay: 0.4,
+    rotate: 15,
+    size: "w-[50px] h-[50px]",
   },
   {
     Icon: Wallet,
-    className: "right-[13%] top-[24%]",
+    className: "right-[13%] top-[25%]",
     delay: 0.8,
     rotate: 12,
+    size: "w-[58px] h-[58px]",
   },
   {
     Icon: ShieldCheck,
-    className: "right-[7%] top-[48%]",
+    className: "right-[6%] top-[45%]",
     delay: 0.3,
     rotate: -10,
+    size: "w-[56px] h-[56px]",
   },
   {
     Icon: FolderOpen,
-    className: "right-[20%] top-[66%]",
-    delay: 1,
+    className: "right-[17%] top-[63%]",
+    delay: 1.0,
     rotate: 8,
+    size: "w-[54px] h-[54px]",
+  },
+  {
+    Icon: ClipboardCheck,
+    className: "right-[7%] top-[76%]",
+    delay: 0.6,
+    rotate: -12,
+    size: "w-[52px] h-[52px]",
   },
 ];
 
@@ -54,7 +101,7 @@ function FloatingIcons() {
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 hidden overflow-hidden md:block"
     >
-      {floatingIcons.map(({ Icon, className, delay, rotate }, index) => (
+      {floatingIcons.map(({ Icon, className, delay, rotate, size }, index) => (
         <motion.div
           key={index}
           className={`absolute ${className}`}
@@ -67,7 +114,7 @@ function FloatingIcons() {
           transition={{
             opacity: { duration: 0.8, delay },
             y: {
-              duration: 5 + index,
+              duration: 5 + (index % 4),
               repeat: shouldReduceMotion ? 0 : Infinity,
               ease: "easeInOut",
               delay,
@@ -80,8 +127,8 @@ function FloatingIcons() {
             },
           }}
         >
-          <div className="flex h-[58px] w-[58px] items-center justify-center rounded-2xl border border-zinc-200/80 bg-white/90 text-emerald-700 shadow-[0_8px_30px_rgba(24,24,27,0.06)] backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-emerald-200">
-            <Icon size={23} strokeWidth={1.6} />
+          <div className={`flex ${size} items-center justify-center rounded-2xl border border-zinc-200/80 bg-white/90 text-emerald-700 shadow-[0_8px_30px_rgba(24,24,27,0.06)] backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-emerald-200`}>
+            <Icon size={22} strokeWidth={1.6} />
           </div>
         </motion.div>
       ))}
