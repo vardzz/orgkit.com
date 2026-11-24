@@ -58,19 +58,20 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Center Logo */}
+          {/* Center Logo: Mark only (orgkit-logo.png) */}
           <div className="flex md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 items-center justify-center">
             <Link
               href="/"
               className="flex items-center focus-visible:outline-accent"
+              aria-label="OrgKit Home"
             >
               <Image
-                src="/orgkit-text-logo.png"
+                src="/orgkit-logo.png"
                 alt="OrgKit Logo"
-                width={120}
-                height={40}
+                width={48}
+                height={32}
                 priority
-                className="h-7 sm:h-8 w-auto object-contain"
+                className="h-8 sm:h-9 w-auto object-contain transition-transform hover:scale-105 active:scale-95"
               />
             </Link>
           </div>
