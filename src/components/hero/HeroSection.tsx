@@ -1,125 +1,138 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
-import { FloatingIconsDecor } from "@/components/decor/FloatingIconsDecor";
 import {
-  Sparkles,
   ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
+  Calendar,
   Users,
+  Check,
+  Clock,
+  ShieldCheck,
   QrCode,
   Wallet,
-  Clock,
-  ArrowUpRight,
-  FileCheck,
+  CheckCircle2,
 } from "lucide-react";
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative pt-8 pb-16 md:pt-16 md:pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Announcement Badge */}
-        <div className="inline-flex items-center gap-2 mb-6 animate-card-fade-in">
-          <Badge
-            variant="emerald"
-            size="md"
-            icon={<Sparkles size={14} className="text-accent" />}
-            className="shadow-sm"
-          >
-            The Operating System for Campus Organizations
-          </Badge>
+    <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        {/* Floating Decorative Indicators with Curved Hairlines (from reference design) */}
+        <div
+          className="absolute inset-0 pointer-events-none select-none hidden lg:block -z-10"
+          aria-hidden="true"
+        >
+          {/* Left: Floating Calendar Card + Curved Hairline */}
+          <div className="absolute top-[26%] left-6 xl:left-14 animate-pulse-slow" style={{ animationDuration: "6s" }}>
+            <div className="relative">
+              {/* Curved SVG Hairline */}
+              <svg
+                className="absolute -top-10 -right-16 w-28 h-28 text-zinc-300 -z-10"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
+                <path
+                  d="M10 80 C 25 30, 65 25, 90 60"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  strokeDasharray="3 3"
+                />
+              </svg>
+              <div className="w-11 h-11 rounded-2xl bg-white border border-zinc-200/90 shadow-md flex items-center justify-center">
+                <Calendar size={20} className="text-[#059669]" strokeWidth={2} />
+              </div>
+            </div>
+          </div>
+
+          {/* Top-Right: Floating Users Card + Curved Hairline */}
+          <div className="absolute top-[8%] right-10 xl:right-20 animate-pulse-slow" style={{ animationDuration: "7s" }}>
+            <div className="relative">
+              {/* Curved SVG Hairline */}
+              <svg
+                className="absolute -top-8 -left-20 w-32 h-32 text-zinc-300 -z-10"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
+                <path
+                  d="M90 65 C 65 15, 25 35, 10 85"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  strokeDasharray="3 3"
+                />
+              </svg>
+              <div className="w-11 h-11 rounded-2xl bg-white border border-zinc-200/90 shadow-md flex items-center justify-center">
+                <Users size={20} className="text-[#059669]" strokeWidth={2} />
+              </div>
+            </div>
+          </div>
+
+          {/* Mid-Right: Floating Check Card + Curved Hairline */}
+          <div className="absolute top-[48%] right-6 xl:right-16 animate-pulse-slow" style={{ animationDuration: "8s" }}>
+            <div className="relative">
+              {/* Curved SVG Hairline */}
+              <svg
+                className="absolute -top-10 -left-16 w-28 h-28 text-zinc-300 -z-10"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
+                <path
+                  d="M10 25 C 40 55, 65 65, 90 35"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  strokeDasharray="3 3"
+                />
+              </svg>
+              <div className="w-10 h-10 rounded-2xl bg-white border border-zinc-200/90 shadow-md flex items-center justify-center">
+                <Check size={19} className="text-[#059669]" strokeWidth={2.5} />
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Display H1 */}
-        <h1 className="font-display-h1 text-ink max-w-4xl mx-auto tracking-tight mb-6">
-          Organize. Collaborate. <span className="text-accent">Lead.</span>
+        {/* 1. Top Badge / Pill: • THE WORKSPACE FOR STUDENT ORGANIZATIONS */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F5E9] border border-[#C8E6C9] mb-7 animate-card-fade-in shadow-xs">
+          <span className="w-2 h-2 rounded-full bg-[#059669]" />
+          <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-[#065F46]">
+            THE WORKSPACE FOR STUDENT ORGANIZATIONS
+          </span>
+        </div>
+
+        {/* 2. Headline: A better way to run your student org. */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#111827] tracking-tight leading-[1.12] max-w-4xl mx-auto mb-6">
+          A better way to run <br className="hidden sm:inline" />
+          your{" "}
+          <span className="inline-block px-3.5 py-0.5 rounded-2xl bg-[#D1FAE5]/80 text-[#047857] shadow-xs">
+            student org.
+          </span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="font-hero-sub max-w-2xl mx-auto mb-9 text-base sm:text-lg md:text-xl text-muted">
-          Stop running your student organization on chaotic spreadsheets, scattered
-          GCash receipts, and paper sign-in sheets. OrgKit gives student leaders a
-          unified, beautifully branded digital headquarters.
+        {/* 3. Subtitle */}
+        <p className="text-base sm:text-lg md:text-xl text-zinc-600 font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
+          Members, events, dues, and everything your team needs. All in one place.
         </p>
 
-        {/* Action CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-12">
-          {/* Google Auth Button Spec */}
+        {/* 4. Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-16">
           <a href="#cta" className="w-full sm:w-auto">
-            <Button
-              variant="google"
-              size="lg"
-              fullWidth
-              className="gap-3 text-ink font-semibold border-line hover:border-zinc-300"
-              icon={
-                <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
-                  <path
-                    fill="#4285F4"
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
-                  />
-                  <path
-                    fill="#EA4335"
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
-                  />
-                </svg>
-              }
-            >
-              Launch Your Org Workspace
-            </Button>
+            <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#064E3B] hover:bg-[#043f30] text-white text-sm sm:text-base font-semibold transition-all shadow-button hover:shadow-button-hover active:scale-[0.99] select-none btn-lift group">
+              <span>Get started free</span>
+              <ArrowRight
+                size={16}
+                strokeWidth={2.2}
+                className="transition-transform group-hover:translate-x-0.5"
+              />
+            </button>
           </a>
 
           <a href="#interactive-demos" className="w-full sm:w-auto">
-            <Button
-              variant="outline"
-              size="lg"
-              fullWidth
-              className="bg-surface/80 border-line hover:bg-surface text-ink-secondary hover:text-ink font-semibold"
-            >
-              Try Interactive Demos
-            </Button>
+            <button className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white hover:bg-zinc-50 text-zinc-800 text-sm sm:text-base font-medium border border-zinc-200/90 shadow-xs hover:border-zinc-300 transition-all active:scale-[0.99] select-none btn-lift">
+              Explore the workspace
+            </button>
           </a>
         </div>
 
-        {/* Social Proof & Trust Strip */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-ink-muted mb-16">
-          <span className="flex items-center gap-1.5">
-            <CheckCircle2 size={16} className="text-accent" />
-            3-Minute Setup
-          </span>
-          <span className="text-zinc-300 hidden sm:inline">•</span>
-          <span className="flex items-center gap-1.5">
-            <CheckCircle2 size={16} className="text-accent" />
-            100% Mobile Ready (360px+)
-          </span>
-          <span className="text-zinc-300 hidden sm:inline">•</span>
-          <span className="flex items-center gap-1.5">
-            <CheckCircle2 size={16} className="text-accent" />
-            Zero Spreadsheet Chaos
-          </span>
-          <span className="text-zinc-300 hidden sm:inline">•</span>
-          <span className="flex items-center gap-1.5">
-            <ShieldCheck size={16} className="text-accent" />
-            Google OAuth &amp; RBAC
-          </span>
-        </div>
-
-        {/* Hero Interactive Mockup Showcase */}
+        {/* 5. Central Floating Dashboard Card Preview */}
         <div className="relative max-w-5xl mx-auto">
-          {/* Six tilted floating micro-cards around mockup */}
-          <FloatingIconsDecor />
-
-          {/* Central Floating Dashboard Card */}
           <div className="relative bg-surface rounded-3xl border border-line shadow-floating p-4 sm:p-6 md:p-8 text-left transition-all hover:border-zinc-300">
             {/* Header of mock card */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-line">
