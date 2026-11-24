@@ -182,7 +182,7 @@ export const Footer: React.FC = () => {
                 />
                 <button
                   type="submit"
-                  className="px-3 py-1.5 rounded-lg bg-zinc-900 text-white text-xs font-medium hover:bg-emerald-800 transition-colors shrink-0 flex items-center gap-1"
+                  className="px-3.5 py-1.5 rounded-lg bg-accent hover:bg-accent-strong text-white text-xs font-medium transition-colors shrink-0 flex items-center gap-1 shadow-xs"
                 >
                   {subscribed ? (
                     <>
