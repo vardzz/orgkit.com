@@ -20,13 +20,7 @@ export const Navbar: React.FC = () => {
   const leftNavLinks = [
     { label: "Features", href: "#features" },
     { label: "How it works", href: "#interactive-demos" },
-    { label: "Anti-Fraud QR", href: "#attendance" },
-    { label: "Handover Vault", href: "#handover" },
-  ];
-
-  const rightNavLinks = [
     { label: "Privacy", href: "#security" },
-    { label: "Sign in", href: "#cta" },
   ];
 
   return (
@@ -51,8 +45,8 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Desktop Left: Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          {/* Desktop Left: Features | How it works | Privacy */}
+          <nav className="hidden md:flex items-center gap-7 lg:gap-9">
             {leftNavLinks.map((link) => (
               <a
                 key={link.label}
@@ -64,7 +58,7 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Center Logo: Symmetrical Notion-Style Centered Brand Mark */}
+          {/* Center Logo */}
           <div className="flex md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 items-center justify-center">
             <Link
               href="/"
@@ -81,17 +75,14 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Desktop Right: Secondary Links & CTA */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-7">
-            {rightNavLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Desktop Right: Sign in | Get started (Button) */}
+          <div className="hidden md:flex items-center gap-6">
+            <a
+              href="#cta"
+              className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
+            >
+              Sign in
+            </a>
 
             <a href="#cta">
               <button className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-accent hover:bg-accent-strong text-white text-sm font-medium transition-all shadow-button hover:shadow-button-hover active:scale-[0.99] select-none btn-lift">
@@ -116,7 +107,7 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-zinc-200 px-5 pt-3 pb-6 shadow-floating animate-card-fade-in">
           <div className="flex flex-col gap-1">
-            {[...leftNavLinks, ...rightNavLinks].map((link) => (
+            {leftNavLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
