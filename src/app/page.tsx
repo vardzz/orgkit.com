@@ -3,6 +3,7 @@ import { GeometricDecor } from "@/components/decor/GeometricDecor";
 import { Navbar } from "@/components/navbar/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { FeatureHighlights } from "@/components/features/FeatureHighlights";
+import { PreFooterBanner } from "@/components/cta/PreFooterBanner";
 import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
 
       {/* Feature Highlights Bento Spotlight (Member Management & Events) */}
       <FeatureHighlights />
+
+      {/* Standalone Pre-Footer Action Banner */}
+      <PreFooterBanner />
 
       {/* Modern Professional Footer with Brand Marks */}
       <Footer />

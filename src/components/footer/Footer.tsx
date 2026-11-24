@@ -6,13 +6,10 @@ import Link from "next/link";
 import {
   ArrowRight,
   Check,
-  ShieldCheck,
-  Sparkles,
   Github,
   Twitter,
   Linkedin,
   Mail,
-  ExternalLink,
 } from "lucide-react";
 
 export const Footer: React.FC = () => {
@@ -32,47 +29,6 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="relative bg-white border-t border-zinc-200/80 text-zinc-600 overflow-hidden font-sans">
-      {/* Top Pre-Footer Callout Banner */}
-      <div className="border-b border-zinc-100 bg-gradient-to-b from-[#FAFAFA] to-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4 text-center md:text-left">
-            <div className="w-12 h-12 rounded-2xl bg-white border border-zinc-200/80 shadow-xs flex items-center justify-center p-2 shrink-0">
-              <Image
-                src="/orgkit-logo-mask.png"
-                alt="OrgKit Mark"
-                width={36}
-                height={36}
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div>
-              <h3 className="text-base sm:text-lg font-bold text-zinc-900 tracking-tight">
-                Ready to transform your student organization?
-              </h3>
-              <p className="text-xs sm:text-sm text-zinc-500 mt-0.5">
-                Join collegiate leaders managing rosters, dues, and events in one place.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="#login"
-              className="px-4 py-2 text-xs sm:text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
-            >
-              Sign In
-            </Link>
-            <Link
-              href="#signup"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-800 text-white text-xs sm:text-sm font-medium hover:bg-emerald-900 transition-all shadow-xs hover:shadow-sm"
-            >
-              <span>Get started free</span>
-              <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
