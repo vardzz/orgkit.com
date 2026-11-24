@@ -14,7 +14,7 @@ import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-base text-ink overflow-x-hidden selection:bg-accent/20 selection:text-accent-strong">
+    <main className="relative min-h-screen bg-base text-ink overflow-x-clip selection:bg-accent/20 selection:text-accent-strong">
       {/* Abstract Geometric Vector Decor Background */}
       <GeometricDecor />
 

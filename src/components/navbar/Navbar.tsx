@@ -25,10 +25,10 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-200 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-zinc-200/60 shadow-xs"
-          : "bg-white/70 backdrop-blur-sm border-b border-zinc-200/30"
+          ? "bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+          : "bg-white/70 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-zinc-200 px-5 pt-3 pb-6 shadow-floating animate-card-fade-in">
+        <div className="md:hidden bg-white/95 backdrop-blur-md px-5 pt-3 pb-6 shadow-floating animate-card-fade-in">
           <div className="flex flex-col gap-1">
             {leftNavLinks.map((link) => (
               <a
