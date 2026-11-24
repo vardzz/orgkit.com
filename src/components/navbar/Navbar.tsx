@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,9 +85,13 @@ export const Navbar: React.FC = () => {
             </a>
 
             <a href="#cta">
-              <button className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-accent hover:bg-accent-strong text-white text-sm font-medium transition-all shadow-button hover:shadow-button-hover active:scale-[0.99] select-none btn-lift">
+              <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent hover:bg-accent-strong text-white text-sm font-medium transition-all shadow-button hover:shadow-button-hover active:scale-[0.99] select-none btn-lift group">
                 <span>Get started</span>
-                <span className="text-sm font-normal">→</span>
+                <ArrowRight
+                  size={15}
+                  strokeWidth={2}
+                  className="shrink-0 transition-transform group-hover:translate-x-0.5"
+                />
               </button>
             </a>
           </div>
@@ -95,8 +99,9 @@ export const Navbar: React.FC = () => {
           {/* Mobile Right: Quick Action Button */}
           <div className="flex md:hidden items-center">
             <a href="#cta">
-              <button className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-accent text-white text-xs font-medium shadow-button">
-                Get started →
+              <button className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-accent text-white text-xs font-medium shadow-button">
+                <span>Get started</span>
+                <ArrowRight size={13} strokeWidth={2} className="shrink-0" />
               </button>
             </a>
           </div>
@@ -132,9 +137,9 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full"
             >
-              <button className="w-full py-2.5 rounded-full bg-accent hover:bg-accent-strong text-white text-sm font-medium transition-all shadow-button flex items-center justify-center gap-1.5 min-h-[44px]">
+              <button className="w-full py-2.5 rounded-full bg-accent hover:bg-accent-strong text-white text-sm font-medium transition-all shadow-button flex items-center justify-center gap-2 min-h-[44px]">
                 <span>Get started</span>
-                <span>→</span>
+                <ArrowRight size={15} strokeWidth={2} className="shrink-0" />
               </button>
             </a>
           </div>
