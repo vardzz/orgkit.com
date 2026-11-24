@@ -2,6 +2,7 @@ import React from "react";
 import { GeometricDecor } from "@/components/decor/GeometricDecor";
 import { Navbar } from "@/components/navbar/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
+import { FeatureHighlights } from "@/components/features/FeatureHighlights";
 import { ProblemsSection } from "@/components/problems/ProblemsSection";
 import { FeatureShowcase } from "@/components/features/FeatureShowcase";
 import { InteractiveDemos } from "@/components/interactive/InteractiveDemos";
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Hero Section with Live Dashboard Mockup */}
       <HeroSection />
+
+      {/* Feature Highlights Bento Spotlight (Member Management & Events) */}
+      <FeatureHighlights />
 
       {/* The 5 Campus Nightmares OrgKit Solves */}
       <ProblemsSection />
