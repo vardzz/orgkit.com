@@ -48,16 +48,6 @@ export const Footer: React.FC = () => {
               The modern operating system engineered specifically for university student organizations, collegiate societies, and youth non-profits.
             </p>
 
-            {/* Live Operational Status */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-50 border border-zinc-200/60 text-xs text-zinc-700">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
-              </span>
-              <span className="font-medium text-[11px] text-zinc-700">
-                All systems operational • v2.0
-              </span>
-            </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-3 pt-2">
