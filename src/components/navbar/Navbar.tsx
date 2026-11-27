@@ -76,15 +76,8 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Desktop Right: Sign in | Get started (Button) */}
+          {/* Desktop Right: Get started (Button) */}
           <div className="hidden md:flex items-center gap-6">
-            <a
-              href="#cta"
-              className="text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
-            >
-              Sign in
-            </a>
-
             <a href="#cta">
               <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent hover:bg-accent-strong text-white text-sm font-medium transition-all shadow-button hover:shadow-button-hover active:scale-[0.99] select-none btn-lift group">
                 <span>Get started</span>
@@ -126,13 +119,6 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="mt-4 pt-4 border-t border-zinc-200 flex flex-col gap-2.5">
-            <a
-              href="#cta"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 rounded-full border border-zinc-200 min-h-[44px] flex items-center justify-center"
-            >
-              Sign in
-            </a>
             <a
               href="#cta"
               onClick={() => setMobileMenuOpen(false)}
