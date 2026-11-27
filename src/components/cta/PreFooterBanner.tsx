@@ -96,10 +96,10 @@ export const PreFooterBanner: React.FC = () => {
             <div className="text-center lg:text-left flex-1 max-w-xl">
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100/90 text-[#065F46] text-[10px] sm:text-[11px] font-semibold tracking-wide uppercase mb-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                <span>Version 1 • Limited Early Access</span>
+                <span>Limited Early Access</span>
               </div>
               <h3 className="text-base sm:text-lg md:text-[19px] font-bold text-zinc-900 tracking-tight leading-snug">
-                Be the first to try OrgKit Version 1.
+                Be the first to try OrgKit.
               </h3>
               <p className="mt-1 text-xs sm:text-sm text-zinc-600 font-normal">
                 We&apos;re limiting pilot spots to select student organizations. Enter your Gmail to request early access.
